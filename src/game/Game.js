@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react'
 import { connect } from 'react-redux'
+import guessLetter  from '../actions/letters/guess'
 //import PropTypes from 'prop-types'
 
 class Game extends PureComponent {
@@ -28,6 +29,8 @@ const mapStateToProps = ({ letters }) => (
   {
     word_to_show: letters.word_to_show,
     guesses: letters.guesses
-  }); //1) letters is (from reducer). 2) props (here)
+  }); //1) letters (from reducer). 2) this.props (here)
 
-export default connect(mapStateToProps)(Game)
+const mapDispatchToProps = { save: guessLetter }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Game)
