@@ -1,1 +1,5 @@
-export default {} // empty for now!
+import letters from './letters'
+
+export default {
+  letters
+}
